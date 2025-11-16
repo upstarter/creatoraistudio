@@ -2,38 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Creator AI Studio</title>
+  <title>Creator AI Studio – Real Tools, Real Results for Creators</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Creator AI Studio builds AI-powered tools, workflows, and educational content for digital creators."
+    content="Creator AI Studio – The Creator's AI Source. Honest AI tool reviews, workflow automation, and practical tutorials for content creators and small businesses."
   />
   <style>
     :root {
-      --bg: #050509;
-      --card: #11121a;
-      --accent: #3ea6ff;
-      --text: #f6f6f8;
-      --muted: #a0a4b8;
-      --border: #262738;
+      --bg: #1b0630;
+      --bg-alt: #270a45;
+      --panel: #200736;
+      --accent: #ff6af1;
+      --accent-soft: #ff9cf7;
+      --highlight: #ffd300;
+      --text: #fdf7ff;
+      --muted: #c2b4dd;
+      --border: #3a205a;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
     }
 
     body {
-      background: radial-gradient(circle at top, #14162b 0, #050509 55%);
+      background: radial-gradient(circle at top, #3b1b7a 0, var(--bg) 55%);
       color: var(--text);
       line-height: 1.6;
     }
 
     a {
-      color: var(--accent);
+      color: var(--accent-soft);
       text-decoration: none;
     }
 
@@ -42,111 +45,247 @@
     }
 
     .wrapper {
-      max-width: 960px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 32px 16px 64px;
+      padding: 28px 16px 64px;
     }
 
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 32px;
+      justify-content: space-between;
+      margin-bottom: 26px;
+      gap: 16px;
     }
 
-    .brand {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 211, 0, 0.45);
+      background: #000;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-text-main {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .tagline {
+    .brand-tagline {
       font-size: 0.9rem;
       color: var(--muted);
-    }
-
-    main {
-      display: grid;
-      gap: 32px;
-    }
-
-    section {
-      background: rgba(9, 10, 18, 0.92);
-      border-radius: 18px;
-      padding: 24px 20px;
-      border: 1px solid var(--border);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
-    }
-
-    h1,
-    h2,
-    h3 {
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    h1 {
-      font-size: 1.9rem;
-    }
-
-    h2 {
-      font-size: 1.3rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 6px;
-      margin-bottom: 14px;
-    }
-
-    p {
-      margin-bottom: 10px;
-      font-size: 0.96rem;
-    }
-
-    ul {
-      padding-left: 18px;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
     }
 
     .pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
-      background: rgba(15, 118, 255, 0.12);
-      color: var(--accent);
+      background: rgba(255, 106, 241, 0.12);
+      color: var(--accent-soft);
       font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
+      margin-bottom: 8px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .hero-main {
+      background: linear-gradient(135deg, #2a0a48, #170528);
+      border-radius: 26px;
+      padding: 26px 22px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 2.8vw + 1.1rem, 2.9rem);
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .hero h1 span.highlight {
+      color: var(--highlight);
+      text-shadow: 0 0 16px rgba(255, 211, 0, 0.6);
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-points {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: 0.93rem;
+    }
+
+    .hero-points li::before {
+      content: "▸";
+      color: var(--accent-soft);
+      margin-right: 6px;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-banner {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at left, #ff6af1 0, #3d1664 45%, #140326 100%);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.7);
+      position: relative;
+      min-height: 190px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: screen;
+      opacity: 0.9;
+    }
+
+    .hero-banner-text {
+      position: absolute;
+      inset: 0;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-banner-title {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ffe6ff;
+    }
+
+    .hero-banner-main {
+      font-size: 1.4rem;
+      font-weight: 800;
+      max-width: 16ch;
+      line-height: 1.2;
+    }
+
+    .hero-banner-main span {
+      color: var(--highlight);
+    }
+
+    .badge-strip {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(253, 242, 255, 0.4);
+      font-size: 0.72rem;
+      color: #fefcff;
+      background: rgba(16, 4, 35, 0.5);
+    }
+
+    section {
+      margin-bottom: 26px;
+    }
+
+    .panel {
+      background: radial-gradient(circle at top left, #32125c 0, var(--panel) 60%);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      padding: 20px 18px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    h2 {
+      font-size: 1.3rem;
       margin-bottom: 10px;
     }
 
-    .sms-card {
-      border: 1px solid #1f2933;
-      background: radial-gradient(circle at top left, #10182b 0, #070915 60%);
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
     }
 
+    p {
+      font-size: 0.94rem;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 18px;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 860px) {
+      .two-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* SMS form */
     .form-row {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-top: 10px;
+      gap: 6px;
       margin-bottom: 10px;
     }
 
     label {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     input[type="text"],
     input[type="email"] {
-      padding: 10px 12px;
-      border-radius: 10px;
+      padding: 9px 11px;
+      border-radius: 11px;
       border: 1px solid var(--border);
-      background: #05060d;
+      background: #11041d;
       color: var(--text);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     input[type="text"]:focus,
@@ -159,8 +298,8 @@
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      margin: 6px 0 12px;
-      font-size: 0.85rem;
+      margin: 8px 0 12px;
+      font-size: 0.82rem;
     }
 
     .checkbox-row input[type="checkbox"] {
@@ -169,7 +308,7 @@
     }
 
     .small-text {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--muted);
     }
 
@@ -177,12 +316,12 @@
       border: none;
       border-radius: 999px;
       padding: 9px 18px;
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-size: 0.94rem;
+      font-weight: 600;
       cursor: pointer;
-      background: linear-gradient(135deg, #3ea6ff, #7b5cff);
-      color: #050509;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(135deg, var(--accent), var(--highlight));
+      color: #1a0327;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
     }
 
     button:hover {
@@ -190,20 +329,15 @@
     }
 
     footer {
-      margin-top: 28px;
+      margin-top: 32px;
       font-size: 0.8rem;
       color: var(--muted);
       text-align: center;
     }
 
-    @media (min-width: 900px) {
-      main {
-        grid-template-columns: 1.1fr 0.9fr;
-        align-items: flex-start;
-      }
-
-      .span-2 {
-        grid-column: 1 / -1;
+    @media (max-width: 780px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
@@ -211,55 +345,136 @@
 <body>
   <div class="wrapper">
     <header>
-      <div>
-        <div class="brand">Creator AI Studio</div>
-        <div class="tagline">AI workflows and tools for modern creators.</div>
+      <div class="brand-area">
+        <div class="brand-logo">
+          <!-- replace src with your actual logo path if different -->
+          <img src="channels4_profile.jpg" alt="Creator AI Studio logo" />
+        </div>
+        <div>
+          <div class="brand-text-main">Creator AI Studio</div>
+          <div class="brand-tagline">The Creator's AI Source</div>
+        </div>
+      </div>
+      <div class="brand-tagline">
+        <a href="https://www.youtube.com/@creator-ai-studio" target="_blank" rel="noopener">
+          YouTube Channel →
+        </a>
       </div>
     </header>
 
     <main>
-      <!-- Left column: overview + SMS -->
-      <section>
-        <div class="pill">About</div>
-        <h1>Creator AI Studio</h1>
-        <p>
-          Creator AI Studio builds and tests AI-powered tools, workflows, and
-          educational content for video creators, designers, and digital
-          entrepreneurs. We experiment with practical AI systems for editing,
-          automation, and production workflows.
-        </p>
-        <p>
-          This site also provides an optional SMS channel for subscribers who
-          want to receive time-sensitive updates, release alerts, and account or
-          access notifications from Creator AI Studio.
-        </p>
-        <p class="small-text">
-          SMS participation is completely optional and requires explicit
-          consent. Details are explained below.
-        </p>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-main">
+          <div class="pill">Real Tools · Real Results</div>
+          <h1>
+            AI workflows that <span class="highlight">actually work</span>
+            for creators.
+          </h1>
+          <p class="hero-sub">
+            Your go-to source for AI tools that genuinely save time and money
+            for content creators and small teams. No sponsored fluff – just
+            honest tests, clear results, and repeatable workflows.
+          </p>
+          <ul class="hero-points">
+            <li>AI tool reviews and comparisons for creators</li>
+            <li>Workflow automation that actually ships content</li>
+            <li>ROI analysis so you know which tools pay for themselves</li>
+          </ul>
+          <p class="hero-meta">
+            New videos every Tuesday. Real tools, real tests, real results.
+          </p>
+        </div>
+
+        <div class="hero-banner">
+          <!-- replace src with your actual banner path if different -->
+          <img src="channels4_banner.jpg" alt="Creator AI Studio banner" />
+          <div class="hero-banner-text">
+            <div class="hero-banner-title">Creator AI Studio</div>
+            <div class="hero-banner-main">
+              Real tools, real results<br />
+              <span>for creators.</span>
+            </div>
+            <div class="badge-strip">
+              <div class="badge">AI Tool Reviews</div>
+              <div class="badge">Workflow Breakdown</div>
+              <div class="badge">Content at Scale</div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="sms-card">
-        <div class="pill">SMS Alerts & Notifications</div>
-        <h2>Join SMS Updates (Opt-In)</h2>
+      <!-- About / What you'll find -->
+      <section class="panel">
+        <div class="pill">About the Channel</div>
+        <h2>The Creator's AI Source</h2>
         <p>
-          By opting in, you agree to receive informational SMS/MMS messages from
-          Creator AI Studio. These may include:
+          Creator AI Studio is where content creators, YouTubers, and small
+          businesses come to see which AI tools actually work in real workflows.
+          I test every tool in real creator environments before recommending it,
+          so you can make smart bets with your time and budget.
         </p>
-        <ul>
-          <li>Account or access verification messages you request;</li>
-          <li>Important service or platform updates;</li>
-          <li>Release notices, workflow changes, or availability alerts;</li>
-          <li>Occasional links or media relevant to these updates.</li>
-        </ul>
 
-        <!-- This is purely front-end markup; hook it to your backend or Twilio as needed -->
+        <div class="two-col">
+          <div>
+            <h3>What you'll find here</h3>
+            <ul>
+              <li>🎬 AI tool reviews and side-by-side comparisons</li>
+              <li>⚡ Workflow automation that actually works end-to-end</li>
+              <li>📈 Systems to scale content without burning out</li>
+              <li>🛠️ Step-by-step tutorials you can implement today</li>
+              <li>💰 ROI analysis so you know which tools pay for themselves</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Perfect for</h3>
+            <ul>
+              <li>YouTube creators looking to scale efficiently</li>
+              <li>Content creators tired of manual, repetitive workflows</li>
+              <li>Small businesses that need better content processes</li>
+              <li>Editors and producers building AI-assisted pipelines</li>
+            </ul>
+            <p>
+              I spend my time testing tools so you can stay focused on making
+              great content. Subscribe for weekly insights that save you hours
+              and help you grow faster.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SMS updates / A2P-compliant opt-in -->
+      <section class="panel">
+        <div class="pill">Optional SMS Alerts</div>
+        <h2>Get Creator AI Studio SMS Updates</h2>
+        <p>
+          Prefer a quick text when something important drops? You can
+          optionally opt in to receive SMS messages from Creator AI Studio.
+          These messages are for updates only – no spam, no marketing blasts.
+        </p>
+        <p>
+          Messages may include: new video releases, significant workflow
+          breakdowns, or important changes to tools and platforms we cover.
+        </p>
+
+        <!-- This is a static form. Connect it to your backend/Twilio webhook as needed. -->
         <form>
           <div class="form-row">
-            <label for="phone">Mobile phone number (US):</label>
+            <label for="sms-email">Email (optional, for follow-up)</label>
+            <input
+              type="email"
+              id="sms-email"
+              name="email"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="sms-phone">Mobile phone number (US)</label>
             <input
               type="text"
-              id="phone"
+              id="sms-phone"
               name="phone"
               placeholder="+1 555 123 4567"
               required
@@ -267,107 +482,124 @@
           </div>
 
           <div class="checkbox-row">
-            <input type="checkbox" id="sms-consent" name="sms-consent" required />
+            <input
+              type="checkbox"
+              id="sms-consent"
+              name="sms-consent"
+              required
+            />
             <label for="sms-consent">
               I agree to receive SMS and MMS messages from Creator AI Studio
-              about account-related notifications, service updates, and
-              informational alerts. I understand that I can reply
+              about channel updates, content releases, and related
+              informational alerts. I understand I can reply
               <strong>STOP</strong> at any time to opt out, or
               <strong>HELP</strong> for assistance.
             </label>
           </div>
 
           <p class="small-text">
-            By submitting this form, you confirm you are the owner or customary
-            user of the provided mobile number and that you authorize Creator AI
-            Studio to send you text messages at this number. Message and data
-            rates may apply. Message frequency varies based on your interactions
-            and requested updates. No third-party numbers are messaged. We do
-            not sell or rent your phone number.
+            By submitting this form, you confirm that you are the owner or
+            customary user of the provided mobile number and that you authorize
+            Creator AI Studio to send text messages to this number. Message and
+            data rates may apply. Message frequency varies based on updates and
+            your interactions. No third-party numbers are messaged. We do not
+            sell or rent your phone number.
           </p>
 
           <button type="submit">Request SMS Enrollment</button>
         </form>
       </section>
 
-      <!-- Bottom: Privacy + Terms -->
-      <section class="span-2">
+      <!-- Resources / Links -->
+      <section class="panel">
+        <div class="pill">Links & Resources</div>
+        <h2>Stay Connected</h2>
+        <p>
+          🎥 YouTube: 
+          <a href="https://www.youtube.com/@creator-ai-studio" target="_blank" rel="noopener">
+            youtube.com/@creator-ai-studio
+          </a>
+        </p>
+        <p>
+          🌐 Website: 
+          <a href="https://creatoraistudio.com">creatoraistudio.com</a>
+        </p>
+        <p>
+          🔗 Free AI Tool Starter Kit:
+          <a href="#" target="_blank" rel="noopener">
+            grab the kit (coming soon)
+          </a>
+          <!-- replace # with your actual link when ready -->
+        </p>
+        <p>
+          📧 Business inquiries:
+          <a href="mailto:hello@creatoraihub.com">hello@creatoraihub.com</a>
+        </p>
+      </section>
+
+      <!-- Privacy & Terms -->
+      <section class="panel">
         <div class="pill">Compliance</div>
         <h2>Privacy Policy</h2>
         <p>
-          Creator AI Studio respects your privacy. We collect only the
-          information you voluntarily provide, such as your name, email address,
-          and mobile phone number, when you fill out forms or interact with our
-          services.
+          Creator AI Studio collects only the information you voluntarily
+          provide, such as your name, email address, and mobile phone number
+          when you fill out forms or subscribe to updates.
         </p>
         <p>
           If you opt in to SMS updates, your mobile number is used solely to
-          deliver text messages as described on this page, including
-          authentication codes you request, service notifications, and related
-          informational messages. We do not sell or rent your personal
-          information to third parties.
+          deliver text messages as described on this page, including content
+          announcements, important updates, and related informational alerts.
+          We do not sell or rent your personal information to third parties.
         </p>
         <p>
-          We may share limited data with service providers (such as SMS
-          delivery platforms) strictly for the purpose of sending messages and
-          maintaining our services. These providers are contractually obligated
-          to protect your information.
+          We may share limited data with trusted service providers (such as SMS
+          delivery platforms or email services) strictly for the purpose of
+          sending messages and maintaining our systems. These providers are
+          required to protect your information.
         </p>
         <p>
-          You may opt out of SMS messaging at any time by replying
-          <strong>STOP</strong> to any message from us. You may also contact us
+          You may opt out of SMS messages at any time by replying
+          <strong>STOP</strong> to any message from us. You may also reach out
           at
-          <a href="mailto:contact@creatoraistudio.com"
-            >contact@creatoraistudio.com</a
-          >
+          <a href="mailto:hello@creatoraihub.com">hello@creatoraihub.com</a>
           to request access, correction, or deletion of your information, where
           applicable.
         </p>
       </section>
 
-      <section class="span-2">
+      <section class="panel">
         <h2>Terms of Service</h2>
-        <h3>Use of the Site</h3>
+        <h3>Use of this Site</h3>
         <p>
-          Creator AI Studio provides educational content, experimental tools,
-          and communication channels for creators. By using this site, you agree
-          to use it only for lawful purposes and not to interfere with or
-          disrupt the operation of the site or related services.
+          Creator AI Studio provides educational content, reviews, and
+          experimental workflows for creators. By using this site, you agree to
+          use it only for lawful purposes and not to interfere with or disrupt
+          the operation of the site or related services.
         </p>
 
         <h3>SMS Messaging Terms</h3>
         <p>
-          By opting in to SMS messages, you agree to receive text messages at
-          the mobile number you provide. Message frequency varies and may depend
-          on your interactions and requested notifications. Message and data
-          rates may apply. You can opt out at any time by replying
+          By opting in to SMS updates, you agree to receive text messages at
+          the mobile number you provide. Message frequency varies and may
+          depend on new releases or important updates. Message and data rates
+          may apply. You can opt out at any time by replying
           <strong>STOP</strong> to any message. For assistance, reply
-          <strong>HELP</strong> or email us at
-          <a href="mailto:contact@creatoraistudio.com"
-            >contact@creatoraistudio.com</a
-          >.
+          <strong>HELP</strong> or email
+          <a href="mailto:hello@creatoraihub.com">hello@creatoraihub.com</a>.
         </p>
         <p>
-          Delivery of SMS and MMS messages is subject to your mobile carrier and
-          network conditions. We are not liable for delays or failures in
+          Delivery of SMS and MMS messages is subject to your mobile carrier
+          and network conditions. We are not liable for delays or failures in
           message delivery.
         </p>
 
         <h3>Changes</h3>
         <p>
-          We may update these terms or this policy from time to time. Any
-          changes will be posted on this page with an updated effective date.
-          Your continued use of the site or SMS services after changes are
-          posted indicates your acceptance of the updated terms.
-        </p>
-
-        <h3>Contact</h3>
-        <p>
-          For any questions regarding this site, privacy, or SMS messaging,
-          contact:
-          <a href="mailto:contact@creatoraistudio.com"
-            >contact@creatoraistudio.com</a
-          >.
+          We may update this site, the Privacy Policy, or these Terms from time
+          to time. Any changes will be posted on this page with an updated
+          effective date. Your continued use of the site or SMS services after
+          changes are posted indicates your acceptance of the updated terms.
         </p>
       </section>
     </main>
