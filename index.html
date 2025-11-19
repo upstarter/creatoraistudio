@@ -267,11 +267,17 @@
     }
 
     /* SMS form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
     .form-row {
       display: flex;
       flex-direction: column;
       gap: 6px;
-      margin-bottom: 10px;
     }
 
     label {
@@ -298,13 +304,14 @@
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      margin: 8px 0 12px;
+      margin: 4px 0 4px;
       font-size: 0.82rem;
     }
 
     .checkbox-row input[type="checkbox"] {
       margin-top: 3px;
       accent-color: var(--accent);
+      flex-shrink: 0;
     }
 
     .small-text {
@@ -322,6 +329,7 @@
       background: linear-gradient(135deg, var(--accent), var(--highlight));
       color: #1a0327;
       box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+      align-self: flex-start;
     }
 
     button:hover {
@@ -347,7 +355,6 @@
     <header>
       <div class="brand-area">
         <div class="brand-logo">
-          <!-- replace src with your actual logo path if different -->
           <img src="channels4_profile.jpg" alt="Creator AI Studio logo" />
         </div>
         <div>
@@ -387,7 +394,6 @@
         </div>
 
         <div class="hero-banner">
-          <!-- replace src with your actual banner path if different -->
           <img src="channels4_banner.jpg" alt="Creator AI Studio banner" />
           <div class="hero-banner-text">
             <div class="hero-banner-title">Creator AI Studio</div>
@@ -458,7 +464,6 @@
           breakdowns, or important changes to tools and platforms we cover.
         </p>
 
-        <!-- This is a static form. Connect it to your backend/Twilio webhook as needed. -->
         <form>
           <div class="form-row">
             <label for="sms-email">Email (optional, for follow-up)</label>
@@ -500,14 +505,6 @@
               </span>
             </label>
           </div>
-            <label for="sms-consent">
-              I agree to receive SMS and MMS messages from Creator AI Studio
-              about channel updates, content releases, and related
-              informational alerts. I understand I can reply
-              <strong>STOP</strong> at any time to opt out, or
-              <strong>HELP</strong> for assistance.
-            </label>
-          </div>
 
           <p class="small-text">
             By submitting this form, you confirm that you are the owner or
@@ -527,13 +524,13 @@
         <div class="pill">Links & Resources</div>
         <h2>Stay Connected</h2>
         <p>
-          🎥 YouTube: 
+          🎥 YouTube:
           <a href="https://www.youtube.com/@creator-ai-studio" target="_blank" rel="noopener">
             youtube.com/@creator-ai-studio
           </a>
         </p>
         <p>
-          🌐 Website: 
+          🌐 Website:
           <a href="https://creatoraistudio.com">creatoraistudio.com</a>
         </p>
         <p>
@@ -541,7 +538,6 @@
           <a href="#" target="_blank" rel="noopener">
             grab the kit (coming soon)
           </a>
-          <!-- replace # with your actual link when ready -->
         </p>
         <p>
           📧 Business inquiries:
