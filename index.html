@@ -60,7 +60,7 @@
     .container {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 32px 20px 0;
     }
 
     /* Header - Compact & Fixed */
@@ -181,17 +181,16 @@
       50% { opacity: 0.5; }
     }
 
-    /* Top Banner - Fixed Background */
+    /* Top Banner - Scrolls with content */
     .top-banner {
       width: 100%;
       height: 400px;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      right: 0;
-      z-index: -1;
+      position: relative;
       overflow: hidden;
       background: linear-gradient(135deg, rgba(255, 106, 241, 0.2), rgba(184, 69, 255, 0.15));
+      border-radius: 20px;
+      margin-bottom: 32px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     }
 
     .top-banner img {
@@ -199,8 +198,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      opacity: 0.3;
-      filter: blur(1px);
+      opacity: 0.6;
     }
 
     .top-banner::before {
@@ -208,17 +206,15 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, 
-        rgba(8, 1, 26, 0.4) 0%, 
-        rgba(8, 1, 26, 0.7) 50%,
-        rgba(8, 1, 26, 0.95) 100%);
+        rgba(8, 1, 26, 0.3) 0%, 
+        rgba(8, 1, 26, 0.6) 100%);
       pointer-events: none;
     }
 
     /* Dense Grid Layout */
     .hero-section {
-      padding: 32px 0;
+      padding: 0;
       margin-bottom: 24px;
-      margin-top: 80px;
       position: relative;
       z-index: 1;
     }
@@ -570,12 +566,11 @@
     </div>
   </header>
 
-  <!-- Top Banner -->
-  <div class="top-banner">
-    <img src="channels4_banner.jpg" alt="Creator AI Studio Banner" />
-  </div>
-
   <main class="container">
+    <!-- Top Banner -->
+    <div class="top-banner">
+      <img src="channels4_banner.jpg" alt="Creator AI Studio Banner" />
+    </div>
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="compact-grid">
