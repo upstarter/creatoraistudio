@@ -91,7 +91,7 @@
     .logo-box {
       width: 44px;
       height: 44px;
-      border-radius: 12px;
+      border-radius: 50%;
       overflow: hidden;
       background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
       padding: 2px;
@@ -102,7 +102,7 @@
     .logo-inner {
       width: 100%;
       height: 100%;
-      border-radius: 10px;
+      border-radius: 50%;
       overflow: hidden;
       background: var(--bg-deep);
       display: flex;
@@ -111,10 +111,10 @@
     }
 
     .logo-inner img {
-      width: calc(100% - 4px);
-      height: calc(100% - 4px);
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 50%;
     }
 
     .logo-text {
@@ -194,6 +194,34 @@
       50% { opacity: 0.5; }
     }
 
+    /* Top Banner */
+    .top-banner {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255, 106, 241, 0.3), rgba(184, 69, 255, 0.2));
+      border-bottom: 1px solid var(--border-glow);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .top-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      mix-blend-mode: overlay;
+      opacity: 0.8;
+    }
+
+    .top-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8, 1, 26, 0.3) 0%, rgba(8, 1, 26, 0.7) 100%);
+      pointer-events: none;
+    }
+
     /* Dense Grid Layout */
     .hero-section {
       padding: 32px 0;
@@ -202,149 +230,12 @@
 
     .compact-grid {
       display: grid;
-      grid-template-columns: 380px 1fr;
+      grid-template-columns: 1fr;
       gap: 24px;
       align-items: start;
     }
 
-    /* Left Panel - Image Card */
-    .visual-card {
-      position: sticky;
-      top: 90px;
-      background: var(--surface-glass);
-      border-radius: 20px;
-      border: 1px solid var(--border-subtle);
-      overflow: hidden;
-      backdrop-filter: blur(20px);
-      box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .visual-header {
-      aspect-ratio: 1 / 1;
-      position: relative;
-      background: linear-gradient(135deg, rgba(184, 69, 255, 0.3), rgba(255, 106, 241, 0.2));
-      overflow: hidden;
-    }
-
-    .visual-header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 30% 30%, rgba(255, 211, 0, 0.15), transparent 60%),
-        radial-gradient(circle at 70% 70%, rgba(255, 106, 241, 0.2), transparent 60%);
-      animation: shimmer 8s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 1; }
-    }
-
-    .visual-img-container {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .visual-img-wrapper {
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      background: var(--bg-deep);
-    }
-
-    .visual-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      mix-blend-mode: screen;
-      opacity: 0.85;
-    }
-
-    .visual-content {
-      padding: 20px;
-    }
-
-    .visual-label {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent-purple);
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .visual-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .visual-title .highlight {
-      background: linear-gradient(135deg, var(--accent-gold), var(--accent-pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .tag-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      padding: 4px 10px;
-      border-radius: 12px;
-      background: rgba(255, 106, 241, 0.1);
-      border: 1px solid var(--border-subtle);
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      transition: all 0.2s ease;
-    }
-
-    .tag:hover {
-      background: rgba(255, 106, 241, 0.2);
-      border-color: var(--border-glow);
-      transform: translateY(-1px);
-    }
-
-    /* Banner Image Container */
-    .banner-container {
-      width: 100%;
-      height: 140px;
-      border-radius: 12px;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(255, 106, 241, 0.2), rgba(184, 69, 255, 0.2));
-      position: relative;
-      margin-top: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .banner-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      mix-blend-mode: overlay;
-      opacity: 0.7;
-    }
-
-    /* Right Content Panel */
+    /* Content Panel */
     .content-panel {
       display: flex;
       flex-direction: column;
@@ -615,16 +506,6 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .compact-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .visual-card {
-        position: relative;
-        top: 0;
-      }
-
       .split-layout {
         grid-template-columns: 1fr;
       }
@@ -678,7 +559,7 @@
         <div class="logo-area">
           <div class="logo-box">
             <div class="logo-inner">
-              <img src="channels4_profile.jpg" alt="Creator AI Studio" />
+              <img src="creator_ai_studio_logo_round.png" alt="Creator AI Studio" />
             </div>
           </div>
           <div class="logo-text">
@@ -694,40 +575,16 @@
     </div>
   </header>
 
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <img src="channels4_banner.jpg" alt="Creator AI Studio Banner" />
+  </div>
+
   <main class="container">
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="compact-grid">
-        <!-- Left: Visual Card -->
-        <div class="visual-card">
-          <div class="visual-header">
-            <div class="visual-img-container">
-              <div class="visual-img-wrapper">
-                <img src="logo.png" alt="Creator AI Studio" />
-              </div>
-            </div>
-          </div>
-          <div class="visual-content">
-            <div class="visual-label">Creator AI Studio</div>
-            <div class="visual-title">
-              Real tools, real results <span class="highlight">for creators</span>
-            </div>
-            <div class="text-body" style="font-size: 0.85rem;">
-              Your go-to source for AI tools that genuinely save time and money. No sponsored fluff.
-            </div>
-            <div class="banner-container">
-              <img src="channels4_banner.jpg" alt="Banner" />
-            </div>
-            <div class="tag-cloud">
-              <div class="tag">AI Reviews</div>
-              <div class="tag">Workflows</div>
-              <div class="tag">Tutorials</div>
-              <div class="tag">ROI Analysis</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Main Content -->
+        <!-- Main Content -->
         <div class="content-panel">
           <div class="art-badge">Real Tools · Real Results</div>
           <h2 class="main-heading">
@@ -865,7 +722,7 @@
           🔗 Free AI Tool Starter Kit: <a href="#">grab the kit (coming soon)</a>
         </p>
         <p class="text-body">
-          📧 Business inquiries: <a href="mailto:hello@creatoraihub.com">hello@creatoraihub.com</a>
+          📧 Business inquiries: <a href="/cdn-cgi/l/email-protection#7119141d1d1e3112031410051e0310181904135f121e1c"><span class="__cf_email__" data-cfemail="93fbf6fffffcd3f0e1f6f2e7fce1f2fafbe6f1bdf0fcfe">[email&#160;protected]</span></a>
         </p>
       </div>
     </section>
@@ -907,12 +764,4 @@
     <div class="container">
       <div class="footer-text">
         © <span id="year"></span> Creator AI Studio. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+      </div
